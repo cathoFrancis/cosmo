@@ -63,6 +63,61 @@ body {
    line-height: 21px;
    padding: 20px 45px;
 }
+.button.animate {
+   position: relative;
+   transition: 0.5s;
+   border: none;
+   border-radius: 50px;
+   overflow: hidden;
+}
+
+.button.animate:hover {
+   background: #036cca;
+   box-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 60px #036cca, 0 0 100px #036cca;
+}
+.button.animate::before {
+   content: "";
+   position: absolute;
+   top: -470px;
+   left: 42%;
+   width: 50px;
+   height: 1000px;
+   background: #fff;
+   transition: 1s;
+   animation: animate 10s linear infinite;
+   animation-delay: 0.33s;
+}
+
+.button.animate:hover::before {
+   background: #036cca;
+   transition: 0.2s;
+}
+
+@keyframes animate {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.button.animate:after {
+   content: "";
+   position: absolute;
+   inset: 1px;
+   transition: 0.2s;
+   background: #036cca;
+   border-radius: 50px;
+}
+
+.button.animate:hover:after {
+   background: #036cca;
+}
+.button.animate h3 {
+   position: inherit;
+   z-index: 2;
+}
 
 .header {
    background-image: url(../images/header-bg.jpg);
@@ -146,6 +201,13 @@ body {
    width: 100%;
    border: 1px solid #fff;
    padding: 15px 10px 16px;
+   transition: 0.5s;
+   box-shadow: 0 0 10px #fff, 0 0 30px #036cca;
+}
+
+.header__btn:hover {
+   box-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 60px #036cca, 0 0 100px #036cca;
+   transition: 0.5s;
 }
 
 .header__description {
@@ -170,6 +232,34 @@ body {
    background-repeat: no-repeat;
 }
 
+.arrow__up {
+   position: fixed;
+   right: 50px;
+   bottom: 40px;
+   width: 50px;
+   height: 50px;
+   background: rgba(3, 108, 202, 0.1);
+   border-radius: 50%;
+   box-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 60px #036cca, 0 0 100px #036cca;
+   display: none;
+   animation: arrow 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+   animation-direction: alternate;
+   animation-duration: 5s;
+}
+
+@keyframes arrow {
+   50% {
+      bottom: 40px;
+   }
+   100% {
+      bottom: 60px;
+   }
+}
+
+.arrow__up img {
+   height: 50px;
+}
+
 .about__item {
    display: flex;
    justify-content: space-between;
@@ -182,6 +272,8 @@ body {
 }
 .about__img {
    max-width: 100%;
+   -webkit-box-reflect: below 1px
+      linear-gradient(transparent, transparent, transparent, transparent, transparent, #0004);
 }
 
 .about__content {
@@ -414,12 +506,18 @@ foreignObject {
 }
 .services__btn {
    width: 100%;
+   transition: 0.5s;
+   box-shadow: 0 0 10px #fff, 0 0 30px #036cca;
 }
-.services__btn--first {
+.services__btn:hover {
+   box-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 60px #036cca, 0 0 100px #036cca;
+}
+.button.services__btn--first {
    margin: 0 0 50px;
    position: relative;
 }
-.services__btn--first::before {
+
+.button.services__btn--first::before {
    content: "";
    position: absolute;
    right: 0;
@@ -517,6 +615,35 @@ foreignObject {
    display: flex;
    justify-content: flex-end;
    margin: 0 0 0 auto;
+   -webkit-box-reflect: below 1px
+      linear-gradient(transparent, transparent, transparent, transparent, transparent, #0004);
+}
+
+.promotion__timer .title {
+   text-align: center;
+   padding-bottom: 20px;
+}
+.promotion__timer .timer {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+.promotion__timer .timer__block {
+   font-family: "spaceagecyrillic";
+   width: 200px;
+   height: 150px;
+   font-size: 16px;
+   font-weight: 300;
+   text-align: center;
+   -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+}
+.promotion__timer .timer__block span {
+   display: block;
+
+   margin-top: 20px;
+   margin-bottom: 5px;
+   font-size: 104px;
+   font-weight: 700;
 }
 
 .footer {
@@ -600,6 +727,132 @@ foreignObject {
    display: none;
 }
 
+.modal,
+.modal__photo,
+.modal__disk {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 30;
+   width: 100%;
+   height: 100%;
+   background: rgba(1, 1, 1, 0.8);
+   overflow-y: hidden;
+}
+.modal .container,
+.modal__photo .container,
+.modal__disk .container {
+   display: flex;
+   justify-content: center;
+   align-items: end;
+   height: 100%;
+}
+.modal__content {
+   align-items: center;
+   margin: auto 0;
+   padding: 40px;
+   background: rgba(1, 22, 41, 0.8);
+   border-radius: 4px;
+   overflow-y: auto;
+   position: relative;
+   max-width: 800px;
+   z-index: 0;
+}
+.modal__close {
+   position: absolute;
+   top: 0px;
+   right: 10px;
+   font-size: 40px;
+   color: #fff;
+   font-weight: 700;
+   background-color: transparent;
+   cursor: pointer;
+}
+.modal__close:hover {
+   transition: 0.15s;
+   color: #036cca;
+}
+.modal__title,
+.modal__title__photo,
+.modal__title__disk {
+   text-align: center;
+   font-size: 40px;
+   text-transform: uppercase;
+   font-family: "spaceagecyrillic";
+   margin-bottom: 60px;
+}
+.modal__input {
+   display: block;
+   margin: 20px auto;
+   width: 225px;
+   height: 50px;
+   background: none;
+   border: 0;
+   border: 1px solid #036cca;
+   color: #fff;
+   font-size: 18px;
+   text-align: center;
+   padding: 0 20px;
+   border-radius: 24px;
+   transition: 0.5s;
+   outline: none;
+}
+
+.modal__input:focus {
+   width: 280px;
+   box-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 60px #036cca, 0 0 100px #036cca;
+}
+.modal__btn {
+   display: block;
+   margin: 0 auto;
+   padding: 13px 61px 13px 68px;
+   background: #036cca;
+   border-radius: 24px;
+   font-size: 18px;
+   color: #fff;
+   transition: 0.5s;
+}
+.modal__btn:hover {
+   box-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 60px #036cca, 0 0 100px #036cca;
+   transition: 0.5s;
+}
+
+.modal__space {
+   width: 180px;
+   height: 195px;
+   margin: 0 auto;
+   margin-top: 60px;
+   position: relative;
+}
+.space__sun {
+   width: 120px;
+   height: 120px;
+   background: url(../images/sun.png) 0 0 / cover no-repeat;
+   border-radius: 50%;
+   margin: 30px auto;
+}
+.space__earth {
+   width: 40px;
+   height: 40px;
+   background: url(../images/earth.png) 0 0 / cover no-repeat;
+   border-radius: 50%;
+   position: absolute;
+   top: -40px;
+   left: 0px;
+   box-shadow: 20px 20px 10px 2px #000000cc;
+   animation: circule 14s infinite;
+   margin: 20px auto;
+}
+@keyframes circule {
+   50% {
+      left: calc(100% - 40px);
+      top: calc(100% - 100px);
+   }
+   100% {
+      z-index: -1;
+   }
+}
 @media (max-width: 1160px) {
    .about__item {
       display: block;

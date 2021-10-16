@@ -8,7 +8,6 @@
   <title>Document</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -22,10 +21,10 @@
               <span></span>
             </button>
             <ul class="menu__list">
-              <li class="menu__item"><a href="" class="menu__link">О НАС </a></li>
-              <li class="menu__item"><a href="" class="menu__link">СТОИМОСТЬ</a></li>
-              <li class="menu__item"><a href="" class="menu__link">ДОП. УСЛУГИ</a></li>
-              <li class="menu__item"><a href="" class="menu__link">ГАРАНТИИ</a></li>
+              <li class="menu__item"><a href="#main" class="menu__link">О НАС </a></li>
+              <li class="menu__item"><a href="#cost" class="menu__link">СТОИМОСТЬ</a></li>
+              <li class="menu__item"><a href="#service" class="menu__link">ДОП. УСЛУГИ</a></li>
+              <li class="menu__item"><a href="#guarantees" class="menu__link">ГАРАНТИИ</a></li>
               <li class="menu__item"><a href="" class="menu__link">НОВОСТИ</a></li>
             </ul>
           </nav>
@@ -57,14 +56,16 @@
       </div>
     </div>
   </header>
-  <main class="main">
+  <main class="main" id="main">
     <section class="about">
+      <button class="arrow__up"><img src="images/arrow-up.svg" alt="На вверх">
+      </button>
       <div class="container">
         <h2 class="title">
           О нас
         </h2>
         <div class="about__item">
-          <img src="images/branson.jpg" alt="branson" class="about__img">
+          <img class="about__img" src="images/branson.jpg" alt="branson">
           <div class="about__content">
             <h3 class="about__title">
               Virgin Galactic
@@ -102,8 +103,8 @@
                 <td area-label="вернешься?" class="about__table-td">99 <span>%</span></td>
               </tr>
             </table>
-            <button class="button">
-              ЗАБРОНИРОВАТЬ ПОЛЕТ
+            <button class="button animate">
+              <h3>ЗАБРОНИРОВАТЬ ПОЛЕТ</h3>
             </button>
           </div>
         </div>
@@ -147,8 +148,8 @@
                 <td area-label="вернешься?" class="about__table-td">99 <span>%</span></td>
               </tr>
             </table>
-            <button class="button">
-              ЗАБРОНИРОВАТЬ ПОЛЕТ
+            <button class="button animate animate-blue__origin">
+              <h3>ЗАБРОНИРОВАТЬ ПОЛЕТ</h3>
             </button>
           </div>
         </div>
@@ -193,8 +194,8 @@
                 <td area-label="вернешься?" class="about__table-td">1 <span>%</span></td>
               </tr>
             </table>
-            <button class="button">
-              ЗАБРОНИРОВАТЬ ПОЛЕТ
+            <button class="button animate">
+              <h3>ЗАБРОНИРОВАТЬ ПОЛЕТ</h3>
             </button>
           </div>
         </div>
@@ -206,7 +207,7 @@
           Как все <br> происходит
         </h2>
         <div class="how__to-box">
-          <svg width="850" height="600" viewBox="0 0 850 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="1050" height="600" viewBox="0 0 1050 600" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="20.2474" y1="19.56552" x2="161.247" y2="95.5655" stroke="white" />
             <line x1="161.43" y1="95.7448" x2="215.43" y2="186.745" stroke="white" />
             <line x1="215.439" y1="186.76" x2="286.439" y2="316.76" stroke="white" />
@@ -238,14 +239,14 @@
             </g>
             <g>
               <circle cx="406" cy="535" r="10" fill="white" />
-              <foreignObject x="431" y="545" width="154" height="70" fill="white">
+              <foreignObject x="431" y="545" width="300" height="70" fill="white">
                 <g>Приземляемся, но это не точно</g>
               </foreignObject>
             </g>
             <g>
               <circle cx="545" cy="435" r="10" fill="white" />
-              <foreignObject x="570" y="425" width="273" height="100" fill="white">
-                <g>Едим из тюбиков: 5 видов меню на выбор (веган, спорт, безлактозное, безглютеновое, обычное)</g>
+              <foreignObject x="570" y="425" width="673" height="100" fill="white">
+                <g>Едим из тюбиков: 5 видов меню на выбор(веган, <br />спорт, безлактозное, безглютеновое, обычное)</g>
               </foreignObject>
             </g>
           </svg>
@@ -291,7 +292,7 @@
         </div>
       </div>
     </section>
-    <section class="info">
+    <section class="info" id="cost">
       <div class="special-offer">
         <div class="container">
           <h2 class="title">
@@ -312,7 +313,9 @@
                   <p class="special-offer__newprice">249 000 $</p>
                 </div>
               </div>
-              <button class="button special-offer__btn">ЗАБРОНИРОВАТЬ ПОЛЕТ</button>
+              <button class="button animate special-offer__btn">
+                <h3>ЗАБРОНИРОВАТЬ ПОЛЕТ</h3>
+              </button>
             </div>
             <div class="special-offer__item">
               <div class="special-offer__item-box">
@@ -325,12 +328,14 @@
                   <p class="special-offer__newprice">225 000 $</p>
                 </div>
               </div>
-              <button class="button special-offer__btn">ЗАБРОНИРОВАТЬ ПОЛЕТ</button>
+              <button class="button animate special-offer__btn">
+                <h3>ЗАБРОНИРОВАТЬ ПОЛЕТ</h3>
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div class="services">
+      <div class="services" id="service">
         <div class="container">
           <h2 class="title services__title">
             Дополнительлные <br> услуги
@@ -355,7 +360,7 @@
             </div>
             <div class="services__buttons">
               <button class="button services__btn services__btn--first">КУПИТЬ УСЛУГИ ФОТОГРАФА</button>
-              <button class="button services__btn">ХОЧУ И ДИСК</button>
+              <button class="button services__btn services__btn--disk">ХОЧУ И ДИСК</button>
             </div>
           </div>
         </div>
@@ -395,12 +400,12 @@
               <input class="contacts__form-input" placeholder="Имя" type="text">
               <input class="contacts__form-input" placeholder="Имя ребенка или внука (на всякий случай)" type="text">
               <input class="contacts__form-input" placeholder="Телефон" type="tel">
-              <button class="button" type="submit">
-                ЗАБРОНИРОВАТЬ ПОЛЕТ
+              <button class="button animate" type="submit">
+                <h3>ЗАБРОНИРОВАТЬ ПОЛЕТ</h3>
               </button>
             </form>
           </div>
-          <div class="contacts__guarantees">
+          <div class="contacts__guarantees" id="guarantees">
             <h2 class="title contacts__title">
               Гарантии
             </h2>
@@ -412,8 +417,31 @@
             <img class="contacts__guarantees-img" src="images/mask-guaranties.png" alt="">
           </div>
         </div>
+        <div class="promotion__timer">
+          <div class="title">Осталось до конца акции:</div>
+          <div class="timer">
+            <div class="timer__block">
+              <span id="days">12</span>
+              дней
+            </div>
+            <div class="timer__block">
+              <span id="hours">20</span>
+              часов
+            </div>
+            <div class="timer__block">
+              <span id="minutes">56</span>
+              минут
+            </div>
+            <div class="timer__block">
+              <span id="seconds">20</span>
+              секунд
+            </div>
+          </div>
+        </div>
       </div>
+
     </section>
+
   </main>
   <footer class="footer">
     <div class="container">
@@ -427,10 +455,10 @@
           </p>
         </div>
         <ul class="footer__menu">
-          <li class="footer__menu-item"><a href="" class="footer__menu-link">О НАС </a></li>
-          <li class="footer__menu-item"><a href="#" class="footer__menu-link">СТОИМОСТЬ</a></li>
-          <li class="footer__menu-item"><a href="#" class="footer__menu-link">ДОП. УСЛУГИ</a></li>
-          <li class="footer__menu-item"><a href="#" class="footer__menu-link">ГАРАНТИИ</a></li>
+          <li class="footer__menu-item"><a href="#main" class="footer__menu-link">О НАС </a></li>
+          <li class="footer__menu-item"><a href="#cost" class="footer__menu-link">СТОИМОСТЬ</a></li>
+          <li class="footer__menu-item"><a href="#service" class="footer__menu-link">ДОП. УСЛУГИ</a></li>
+          <li class="footer__menu-item"><a href="#guarantees" class="footer__menu-link">ГАРАНТИИ</a></li>
           <li class="footer__menu-item"><a href="#" class="footer__menu-link">НОВОСТИ</a></li>
         </ul>
         <ul class="footer__links">
@@ -445,14 +473,67 @@
     </div>
 
   </footer>
+  <div class="modal">
+    <div class="container">
+      <div class="modal__content">
+        <form class="form">
 
+          <input type="hidden" name="project_name" value="Cosmo">
+          <input type="hidden" name="admin_email" value="catho.francis@gmail.com ">
+          <input type="hidden" name="form_subject" value="Form Subject">
+
+          <div data-close class="modal__close">&times;</div>
+          <div class="modal__title">
+            <p>Скорее на стартовую площадку!</p>
+          </div>
+          <input class="modal__input" required placeholder="Ваше имя" name="name" type="text">
+          <input class="modal__input" required placeholder="Ваш номер телефона" name="phone" type="phone">
+          <button type="submit" class="modal__btn">Готов! Когда летим?</button>
+        </form>
+        <div class="modal__space">
+          <div class="space__sun"></div>
+          <div class="space__earth"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal__photo">
+    <div class="container">
+      <div class="modal__content">
+        <form class="form">
+          <div data-close class="modal__close">&times;</div>
+          <div class="modal__title__photo">
+            <p>Фотограф ожидает тебя на Луне! Скорее летим!</p>
+          </div>
+          <input class="modal__input" required placeholder="Ваше имя" name="name" type="text">
+          <input class="modal__input" required placeholder="Ваш номер телефона" name="phone" type="phone">
+          <button type="submit" class="modal__btn">К полету готов!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal__disk">
+    <div class="container">
+      <div class="modal__content">
+        <form class="form">
+          <div data-close class="modal__close">&times;</div>
+          <div class="modal__title__disk">
+            <p>Диск уже у фотографа! Быстрее садимся в шатл!</p>
+          </div>
+          <input class="modal__input" required placeholder="Ваше имя" name="name" type="text">
+          <input class="modal__input" required placeholder="Ваш номер телефона" name="phone" type="phone">
+          <button type="submit" class="modal__btn">Поехали!</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/slick.min.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/timer.js"></script>
   <script src="js/main.js"></script>
 </body>
 
