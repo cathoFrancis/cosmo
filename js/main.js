@@ -37,6 +37,7 @@ $(function () {
    $('.menu-btn').click(function () {
       $('.menu__list').toggleClass('active');
    });
+
    $('.button.animate, .header__btn, .login').click(function () {
       $('.modal').show();
       $('body').css('overflow', 'hidden');
@@ -51,6 +52,7 @@ $(function () {
       $('.modal__photo').show();
       $('body').css('overflow', 'hidden');
    });
+
    $('.services__btn--disk').click(function () {
       $('.modal__disk').show();
       $('body').css('overflow', 'hidden');
