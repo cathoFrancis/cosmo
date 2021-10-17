@@ -9,7 +9,7 @@ $(function () {
    });
 
    $(window).scroll(function () {
-      if ($(this).scrollTop() > 50) {
+      if ($(this).scrollTop() > 50 && $(this).scrollTop() < 8500) {
          $('.arrow__up').fadeIn();
       } else {
          $('.arrow__up').fadeOut();
@@ -57,5 +57,7 @@ $(function () {
       $('.modal__disk').show();
       $('body').css('overflow', 'hidden');
    });
+
+
 
 });

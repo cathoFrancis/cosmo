@@ -245,6 +245,7 @@ body {
    animation: arrow 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
    animation-direction: alternate;
    animation-duration: 5s;
+   z-index: 20;
 }
 
 @keyframes arrow {
@@ -639,7 +640,6 @@ foreignObject {
 }
 .promotion__timer .timer__block span {
    display: block;
-
    margin-top: 20px;
    margin-bottom: 5px;
    font-size: 104px;
@@ -1002,6 +1002,15 @@ foreignObject {
    .slick-slide img {
       max-width: 100%;
    }
+   .modal__content {
+      max-width: 520px;
+   }
+}
+
+@media (max-width: 750px) {
+   .promotion__timer .timer__block span {
+      font-size: 80px;
+   }
 }
 
 @media (max-width: 720px) {
@@ -1098,6 +1107,9 @@ foreignObject {
    .services__title {
       font-size: 35px;
    }
+   .promotion__timer .timer__block span {
+      font-size: 60px;
+   }
 }
 
 @media (max-width: 570px) {
@@ -1124,6 +1136,15 @@ foreignObject {
       text-align: center;
       padding-bottom: 100px;
    }
+
+   .modal__content {
+      max-width: 420px;
+   }
+   .modal__title,
+   .modal__title__photo,
+   .modal__title__disk {
+      font-size: 30px;
+   }
 }
 @media (max-width: 480px) {
    .title {
@@ -1149,10 +1170,36 @@ foreignObject {
       font-size: 20px;
       line-height: 26px;
    }
+   .promotion__timer .timer__block span {
+      font-size: 40px;
+   }
+   .modal__content {
+      max-width: 340px;
+   }
+   .modal__btn {
+      width: 240px;
+   }
 }
 @media (max-width: 375px) {
    .services__btn--first::before {
       bottom: 63px;
+   }
+   .modal__content {
+      max-width: 260px;
+   }
+   .modal__title,
+   .modal__title__photo,
+   .modal__title__disk {
+      font-size: 20px;
+   }
+   .modal__input {
+      width: 160px;
+      font-size: 12px;
+      padding: 0;
+   }
+   .modal__btn {
+      width: 160px;
+      font-size: 14px;
    }
 }
 
@@ -1186,5 +1233,14 @@ foreignObject {
    .header__btn {
       font-size: 16px;
       width: 100%;
+   }
+   .special-offer__item-text {
+      margin: 0 -30px;
+   }
+   .promotion__timer .timer__block {
+      font-size: 12px;
+   }
+   .promotion__timer .timer__block span {
+      font-size: 30px;
    }
 }
