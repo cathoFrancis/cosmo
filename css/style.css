@@ -225,6 +225,87 @@ body {
    margin: 0 0 0 52px;
 }
 
+.header__falling-stars {
+   position: absolute;
+   top: 5%;
+   left: 50%;
+   width: 1px;
+   height: 1px;
+   background: #fff;
+   border-radius: 50%;
+   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 0 3px rgba(255, 255, 255, 1);
+   animation: falling 5s linear infinite;
+}
+.header__falling-stars::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   width: 100px;
+   height: 1px;
+   background: linear-gradient(90deg, #fff, transparent);
+   transform: translateY(-50%);
+}
+
+@keyframes falling {
+   0% {
+      transform: rotate(315deg) translateX(0);
+   }
+   100% {
+      transform: rotate(315deg) translateX(-1000px);
+      opacity: 0;
+   }
+}
+
+.header__falling-stars:nth-child(1) {
+   top: 0;
+   right: -110px;
+   left: initial;
+   animation-duration: 2s;
+   animation-delay: 0;
+}
+.header__falling-stars:nth-child(2) {
+   top: 0;
+   right: 180px;
+   left: initial;
+   animation-duration: 3s;
+   animation-delay: 0.2s;
+}
+.header__falling-stars:nth-child(3) {
+   top: 50px;
+   right: 100px;
+   left: initial;
+   animation-duration: 2s;
+   animation-delay: 0.4s;
+}
+.header__falling-stars:nth-child(4) {
+   top: 0px;
+   right: 500px;
+   left: initial;
+   animation-duration: 2s;
+   animation-delay: 0.6s;
+}
+.header__falling-stars:nth-child(5) {
+   top: 0;
+   right: 800px;
+   left: initial;
+   animation-duration: 2.5s;
+   animation-delay: 0.8;
+}
+.header__falling-stars:nth-child(6) {
+   top: 0;
+   right: 1200px;
+   left: initial;
+   animation-duration: 2.8s;
+   animation-delay: 0.8s;
+}
+.header__falling-stars:nth-child(7) {
+   top: 0;
+   right: 1500px;
+   left: initial;
+   animation-duration: 3s;
+   animation-delay: 1s;
+}
+
 .about {
    background-image: url(../images/about-bg.jpg);
    background-size: cover;
